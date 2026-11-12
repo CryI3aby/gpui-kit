@@ -591,6 +591,9 @@ impl RenderOnce for Input {
                         .selected(is_folded)
                         .into_any_element()
                 })),
+
+                line_number: cx.theme().highlight_theme.style.editor_line_number,
+                active_line_number: cx.theme().highlight_theme.style.editor_active_line_number,
             },
             cx,
         );

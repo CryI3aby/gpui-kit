@@ -120,6 +120,9 @@ pub struct InputEditorStyle {
     pub editor_active_line: Option<Hsla>,
     pub editor_gutter_background: Option<Hsla>,
     pub fold_icon_renderer: Option<FoldIconRenderer>,
+
+    pub line_number: Option<Hsla>,
+    pub active_line_number: Option<Hsla>,
 }
 
 impl InputEditorStyle {
@@ -175,6 +178,9 @@ impl Default for InputEditorStyle {
             editor_active_line: None,
             editor_gutter_background: None,
             fold_icon_renderer: None,
+
+            line_number: None,
+            active_line_number: None,
         }
     }
 }

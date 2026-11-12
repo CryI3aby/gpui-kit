@@ -3581,7 +3581,10 @@ impl<M: InputModeKind> Element for TextElement<M> {
             let other_line_runs = vec![TextRun {
                 len: line_number_len,
                 font: style.font(),
-                color: state.editor_style.muted_foreground,
+                color: state
+                        .editor_style
+                        .line_number
+                        .unwrap_or(state.editor_style.muted_foreground),
                 background_color: None,
                 underline: None,
                 strikethrough: None,
@@ -3589,7 +3592,10 @@ impl<M: InputModeKind> Element for TextElement<M> {
             let current_line_runs = vec![TextRun {
                 len: line_number_len,
                 font: style.font(),
-                color: state.editor_style.foreground,
+                color: state
+                        .editor_style
+                        .active_line_number
+                        .unwrap_or(state.editor_style.foreground),
                 background_color: None,
                 underline: None,
                 strikethrough: None,
